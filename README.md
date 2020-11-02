@@ -36,16 +36,17 @@ A *Schema* stored in Schema registry is composed of 4 fields:
   | subject | String | Name of the subject that this schema is registered under |
   id | Integer | Globally unique identifier of the schema |
   version | Integer | Version of the returned schema |
-  schema | String | The schema string
+  schema | String | The schema string |
 
 + **subject**
   In order that the components which produce and consume messages use schema validation and the good one, a link have to be done between the Topic used to *publish* messages and the schema to be validated. 
 
   Each message published in Kafka is a key-value pair. Either the message key or the message value, or both, can be validated by a schema.
 
-  The association between a Topic and a Schema is based on the name of the subject. Three strategies are supported:
+  The association between a Topic and a Schema is based on the name of the subject.
+  Three strategies are supported:
   | Strategy | Description |
-  | -------- | -------- | -------- |
+  | -------- | -------- | 
   | TopicNameStrategy | Derives subject name from topic name. (This is the default.) |
   RecordNameStrategy | Derives subject name from record name, and provides a way to group logically related events that may have different data structures under a subject. |
   TopicRecordNameStrategy | Derives the subject name from topic and record name, as a way to group logically related events that may have different data structures under a subject. |
